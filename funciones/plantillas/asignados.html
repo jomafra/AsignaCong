@@ -1,0 +1,127 @@
+{% extends "base_pdf.html" %}
+
+{% block title %}
+    Asignados_pdf
+{% endblock %}
+{% block content %}
+<div class="container">
+    <div class="row ">
+        <div class="col text-center mb-3">
+            <h3>Asignados a Funciones de Congregacion</h3>
+        </div> 
+    </div>
+    <div class="row ">
+        <div class="col-lg-4">
+            <div class="card">
+                <div class="card-body">
+                    <h4 class="card-title text-center">Plataforma</h4>
+                    {% if listaplat %}
+                    <table class="table">
+                        {% for p in listaplat %}
+                       
+                        <tr>
+                            <td>
+                                {{p.fecha}}
+                            </td>
+                            <td>
+                                {{p.voluntario_Id}}
+                            </td>
+                        </tr>
+                        {%endfor%}
+                    </table>
+                    {% endif %}
+                </div>
+                <div class="card-footer">
+                    <small class="text-muted">Lista de hermanos asignados a atender los microfono de la plataforma durante las reuniones.</small>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-4">
+            <div class="card">
+                <div class="card-body">
+                    <h4 class="card-title text-center">Microfonos</h4>
+                    {% if listamicr %}
+                    <table class="table">
+                        {% for m in listamicr %}
+                        <tr>
+                            <td>
+                                {{m.fecha}}
+                            </td>
+                            <td>
+                                {{m.voluntario_Id}}
+                            </td>
+                        </tr>
+                        {%endfor%}
+                    </table>
+                    {% endif %}
+                </div>
+                <div class="card-footer">
+                    <small class="text-muted">Lista de hermanos encargados de pasar el microfono durante los comentarios en las reuniones.</small>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-4">
+            <div class="card">
+                <div class="card-body">
+                    <h4 class="card-title text-center">Zoom</h4>
+                    {% if listazoom %}
+                    <table class="table">
+                        {% for z in listazoom %}
+                        <tr>
+                            <td>
+                                {{z.fecha}}
+                            </td>
+                            <td>
+                                {{z.voluntario_Id}}
+                            </td>
+                        </tr>
+                        {%endfor%}
+                    </table>
+                    {% endif %}
+                </div>
+                <div class="card-footer">
+                    <small class="text-muted">Lista de hermanos encargados de permitir entrada a zoom y activar los microfonos virtuales durante los comentaarios en las reuniones.</small>
+                </div>
+            </div>
+        </div>
+    </div>
+    <br />
+    <div class="row ">
+        <div class="col-lg-6">
+            <div class="card">
+                <div class="card-body">
+                    <h4 class="card-title text-center">Acomodadores</h4>
+                    {% if listacomo %}
+
+                    <table class="table">
+                        {% for a in listacomo %}
+                        <tr>
+                            <td>
+                                {{a.fecha}}
+                            </td>
+                            <td>
+                                {{a.voluntario_Id}}
+                            </td>
+                        </tr>
+                        {%endfor%}
+                    </table>
+
+                    {% endif %}
+                </div>
+                <div class="card-footer">
+                    <small class="text-muted">Lista de hermanos asignados a recibir y buscarle puestos a los visitantes durante las reuniones.</small>
+                </div>
+            </div>
+        </div>
+        
+
+
+
+    </div>
+
+
+    
+            
+        
+</div>
+{% endblock %}

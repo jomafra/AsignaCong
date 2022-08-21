@@ -1,0 +1,61 @@
+{% load static %}
+<!doctype html>
+<html lang="es">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <!-- CSS only -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
+    <title>
+        {% block title %}
+
+        {% endblock %}
+    </title>
+</head>
+<body class=" container">
+    <nav class="navbar navbar-light bg-light  mt-3">
+        <ul class="nav nav-pills nav-fill ">
+            <li class="nav-item">
+                <a class="btn btn-secondary nav-link" href="/dashboard/">dashboard</a>
+            </li>
+            <li class="nav-item">
+                <a class=" btn btn-secondary nav-link " href="/voluntarios/">Voluntarios</a>
+            </li>
+            <li class="nav-item">
+                <a class="btn btn-secondary  nav-link" href="/plataforma/">Plataforma</a>
+            </li>
+            <li class="nav-item">
+                <a class="btn btn-secondary nav-link" href="/microfonos/">Microfonos</a>
+            </li>
+            <li class="nav-item">
+                <a class="btn btn-secondary nav-link" href="/acomodadores/">Acomodadores</a>
+            </li>
+            <li class="nav-item">
+                <a class="btn btn-secondary nav-link" href="/zoom/">Zoom</a>
+            </li>
+            <li class="nav-item">
+                <a class="btn btn-secondary nav-link" href="/presidentes/">Presidentes</a>
+            </li>
+            <li class="nav-item">
+                <a class="btn btn-secondary nav-link" href="/lectores/">Lectores</a>
+            </li>
+            <li class="nav-item">
+                <a class="btn btn-secondary nav-link" href="/asignados/">Asignados</a>
+            </li>
+            
+            <li class="nav-item">
+                <a class="btn btn-secondary nav-link" href="/crear_pdf/">Impr Pdf</a>
+            </li>
+        </ul>
+        
+    </nav>
+    
+
+    <br />
+
+    {% block contenido %}
+
+    {% endblock %}
+
+</body>
+</html>

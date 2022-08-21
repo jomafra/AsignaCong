@@ -1,0 +1,37 @@
+{% extends 'base.html'%}
+
+
+{% block title%}
+    microfonos
+{% endblock%}
+
+{% block contenido%}
+    <div class" row mt-3 justify-content-center">
+        <h3>Microfonos</h3>
+    </div>
+
+
+    <table class="table table-hover">
+        <thead>
+            <tr>
+                <th scope="col">Fecha</th>
+                <th scope="col">Nombres</th>
+                <th scope="col">Opciones</th>
+                <th scope="col">Agregar</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% if listamicro %}
+                {% for asignado in listamicro %}
+            <tr>
+                <td>{{asignado.fecha}}</td>
+                <td>{{asignado.voluntario_Id}}</td>
+                <td><a href="/admin/funciones/microfono/{{asignado.microfono_Id}}/change/">Cambiar</a></td>
+                <td>Otro</td>
+            </tr>
+                {%endfor%}
+            {% endif %}
+        </tbody>
+    </table>
+{% endblock%}
+

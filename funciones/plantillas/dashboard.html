@@ -1,0 +1,109 @@
+{% extends 'base.html' %}
+
+
+
+
+    {% block title %}
+        esquema
+    {% endblock %}
+
+
+    {% block contenido %}
+<div class="row ">
+    <div class="col-lg-4">
+        <div class="card">        
+            <div class="card-body">
+                <h5 class="card-title"><a class=" btn btn-light nav-link " href="/plataforma/">Plataforma</a></h5>
+                {% if listaplat %}
+                    {% for p in listaplat %}               
+                        <h6>{{p.fecha}} {{p.voluntario_Id}}</h6>
+                    {%endfor%}
+                {% endif %}            
+            </div>
+            <div class="card-footer">
+                <small class="text-muted">Lista de hermanos asignados a atender los microfono de la plataforma durante las reuniones.</small>
+            </div>
+        </div>
+    </div>
+    <div class="col-lg-4">
+        <div class="card">
+            <div class="card-body">
+                <h5 class="card-title"><a class=" btn btn-light nav-link " href="/microfonos/">Microfonos</a></h5>
+                {% if listamicr %}
+                {% for m in listamicr %}
+                <h6>{{m.fecha}} {{m.voluntario_Id}}</h6>
+                {%endfor%}
+                {% endif %}
+            </div>
+            <div class="card-footer">
+                     <small class="text-muted">Lista de hermanos encargados de pasar el microfono durante los comentarios en las reuniones.</small>
+            </div>
+        </div>
+    </div>
+    <div class="col-lg-4">
+            <div class="card">              
+                <div class="card-body">
+                    <h5 class="card-title"><a class=" btn btn-light nav-link " href="/acomodadores/">Acomodadores</a></h5>
+                    {% if listacomo %}
+                        {% for a in listacomo %}
+                            <h6>{{a.fecha}} {{a.voluntario_Id}}</h6>
+                        {%endfor%}
+                    {% endif %}
+                </div>
+                <div class="card-footer">
+                    <small class="text-muted">Lista de hermanos encargados del privilegio de acomodador en el salon del reino durante las reuniones</small>
+                </div>
+            </div>
+    </div>
+</div>
+<br/>
+<br/>
+<div class="row ">
+        <div class="col-lg-4 ">
+            <div class="card">         
+                <div class="card-body">
+                    <h5 class="card-title"><a class=" btn btn-light nav-link " href="/zoom/">Zoom</a></h5>
+                    {% if listazoom %}
+                    {% for z in listazoom %}
+                    <h6>{{z.fecha}} {{z.voluntario_Id}}</h6>
+                    {%endfor%}
+                    {% endif %}                  
+                </div>
+                <div class="card-footer">
+                    <small class="text-muted">Lista de hermanos encargados de microfonos y acomodador en plataforma de zoom.</small>
+</div>
+            </div>
+        </div>
+        <div class="col-lg-4">
+            <div class="card">          
+                <div class="card-body">
+                    <h5 class="card-title"><a class=" btn btn-light nav-link " href="/presidentes/">Presidentes</a></h5>
+                    {% if listapres %}
+                        {% for p in listapres %}
+                            <h6>{{p.fecha}} {{p.voluntario_Id}}</h6>
+                        {%endfor%}
+                    {% endif %}                 
+                </div>
+                <div class="card-footer">
+                    <small class="text-muted">Lista de hermanos asignados a presidentes en la reunion publica</small>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-4">
+            <div class="card">              
+                <div class="card-body">
+                    <h5 class="card-title"><a class=" btn btn-light nav-link " href="/lectores/">Lectores</a></h5>
+                    {% if listalect %}
+                        {% for l in listalect %}
+                        <h6>{{l.fecha}} {{l.voluntario_Id}}</h6>
+                        {%endfor%}
+                    {% endif %}                  
+                </div>
+                <div class="card-footer">
+                    <small class="text-muted">Lista de hermanos asignados a la lectura en la reunion de la atalaya.</small>
+                </div>
+            </div>
+        </div>
+ </div>
+        {% endblock %}
+

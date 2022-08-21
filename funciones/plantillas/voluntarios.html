@@ -1,0 +1,54 @@
+{% extends 'base.html' %}
+
+
+
+
+    {% block title %}
+        voluntarios
+    {% endblock %}
+
+
+    {% block contenido %}
+<div class" row mt-2 mb-2">
+    <div class="">
+        <h3>Voluntarios</h3>
+    </div>
+    
+
+</div>
+        
+        <table class="table table-hover">
+            <thead>
+                <tr>
+                    <th scope="col">Nombres</th>
+                    <th scope="col">Plataforma</th>
+                    <th scope="col">Microfonos</th>
+                    <th scope="col">Acomodador</th>
+                    <th scope="col">Zoom</th>
+                    <th scope="col">Presidente</th>
+                    <th scope="col">Lector</th>
+                    <th scope="col">Privilegio</th>
+                    <th scope="col">Opciones</th>
+                </tr>
+             </thead>
+            <tbody>
+                {% if listVol %}
+                    {% for h in listVol %}
+                <tr>
+
+                    <td>{{h.nombrecompleto}}</td>
+                    <td>{{h.habilit_plataf}}</td>
+                    <td>{{h.habilit_microf}}</td>
+                    <td>{{h.habilit_acomod}}</td>
+                    <td>{{h.habilit_Zoom}}</td>
+                    <td>{{h.habilit_presid}}</td>
+                    <td>{{h.habilit_lector}}</td>
+                    <td>{{h.privilegio}}</td>
+                    <td><a href="/admin/funciones/voluntario/{{h.voluntario_Id}}/change/">Editar </a> <a href="/admin/funciones/voluntario/add/"> Otro +</a></td>
+
+                </tr>
+                    {%endfor%}
+                {% endif %}
+            </tbody>
+        </table>
+    {% endblock %}

@@ -1,0 +1,43 @@
+{% extends 'base.html'%}
+
+
+{% block title%}
+    acomodadores
+{% endblock%}
+
+{% block contenido%}
+    <div class" row mt-3 justify-content-center">
+        <h3>Acomodadores</h3>
+    </div>
+
+
+    <table class="table table-hover">
+        <thead>
+            <tr>
+                <th scope="col">Fecha</th>
+                <th scope="col">Nombres</th>
+                <th scope="col">Opciones</th>
+               
+            </tr>
+        </thead>
+        <tbody>
+            {% if listacomo %}
+            {% for a in listacomo %}
+            <tr>
+                <td>{{a.fecha}}</td>
+                <td>{{a.voluntario_Id}}</td>
+
+                <td>
+                    <a class=" " href="/admin/funciones/acomodador/{{a.acomodador_Id}}/change/">Cambiar</a>
+                    <a class="" href="/admin/funciones/acomodador/{{a.acomodador_Id}}/delete/">Borrar</a>
+                    <a class="" href="/admin/funciones/acomodador/add/">+</a>
+                </td>
+
+            </tr>
+            {%endfor%}
+            {% endif %}
+        </tbody>
+    </table>
+    
+{% endblock%}
+

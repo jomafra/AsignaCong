@@ -1,0 +1,38 @@
+{% extends 'base.html'%}
+
+
+{% block title%}
+    Zoom
+{% endblock%}
+
+{% block contenido%}
+    <div class" row mt-3 justify-content-center">
+        <h3> Zoom</h3>
+    </div>
+
+
+    <table class="table table-hover">
+        <thead>
+            <tr>
+                <th scope="col">Fecha</th>
+                <th scope="col">Nombres</th>
+                <th scope="col">Opciones</th>
+                <th scope="col">Agregar</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% if listazoom %}
+                {% for asignado in listazoom %}
+            <tr>
+                <td>{{asignado.fecha}}</td>
+                <td>{{asignado.voluntario_Id}}</td>
+
+                <td><a href="/admin/funciones/zoom/{{asignado.Zoom_Id}}/change/">Cambiar</a></td>
+                <td>Otro</td>
+            </tr>
+                {%endfor%}
+            {% endif %}
+        </tbody>
+    </table>
+{% endblock%}
+

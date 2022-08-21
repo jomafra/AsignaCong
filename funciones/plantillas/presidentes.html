@@ -1,0 +1,43 @@
+{% extends 'base.html'%}
+
+
+{% block title%}
+    presidentes
+{% endblock%}
+
+{% block contenido%}
+<div class"row mt-2">
+    <div class="col-lg-6">
+        <h3>Presidentes</h3>
+    </div>
+
+
+</div>
+
+
+<table class="table table-hover">
+    <thead>
+        <tr>
+            <th scope="col">Fecha</th>
+            <th scope="col">Nombres</th>
+            <th scope="col">Opciones</th>
+            <th scope="col">Agregar</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% if listapres %}
+        {% for p in listapres %}
+        <tr>
+            <td>{{p.fecha}}</td>
+            <td>{{p.voluntario_Id}}</td>
+            <td><a class=" nav-link" href="/admin/funciones/presidente/{{p.presid_Id}}/change/">Cambiar</a></td>
+            <td><a class=" nav-link" href="/admin/funciones/presidente/add/">Otro</a></td>
+
+        </tr>
+        {%endfor%}
+        {% endif %}
+    </tbody>
+</table>
+
+{% endblock%}
+
