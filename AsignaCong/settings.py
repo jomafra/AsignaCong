@@ -1,6 +1,7 @@
 import os
 from pathlib import Path
-from decouple import dj_database_url
+from dj_database_url import dj_database_url
+from decouple import config
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -65,17 +66,13 @@ WSGI_APPLICATION = 'AsignaCong.wsgi.application'
 
 # Database
 # https://docs.djangoproject.com/en/4.1/ref/settings/#databases
-#DATABASES = {
-#   'default': {
-#       'ENGINE': 'django.db.backends.sqlite3',
-#       'NAME': 'funciones_db',
-#   }
-#}
-
-
-from decouple import config
-
-DATABASES ={
+DATABASES = {
+   'default': {
+       'ENGINE': 'django.db.backends.sqlite3',
+       'NAME': 'funciones_db',
+        }
+   }
+DATABASES = {
    'default': dj_database_url.config(
        default = config('DATABASE_URL'))    
     }
