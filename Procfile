@@ -1,1 +1,1 @@
-web: gunicorn AsignaCong.wsgi
+web: gunicorn AsignaCong.wsgi --log-file -
