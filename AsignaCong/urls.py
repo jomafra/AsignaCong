@@ -3,22 +3,21 @@ from django.contrib import admin
 from django.conf import settings
 from django.conf.urls.static import static
 from django.urls import path
-from . import views
-#voluntarios, plataforma, microfonos, zoom, dashboard, presidentes,lectores,acomodadores, asignados ,exp_pdf_plataf
+from funciones.views import voluntarios, plataforma, microfonos, zoom, dashboard, presidentes,lectores,acomodadores, asignados ,exp_pdf_plataf
 
 
 urlpatterns = [
     path('admin/',admin.site.urls),
-    path('acomodadores/',views.acomodadores),
-    path('',views.dashboard),
-    path('dashboard/',views.dashboard),
-    path('lectores/',views.lectores),
-    path('microfonos/',views.microfonos),
-    path('plataforma/',views.plataforma),  
-    path('presidentes/',views.presidentes),   
-    path('voluntarios/',views.voluntarios),
-    path('asignados/',views.asignados),
-    path('zoom/',views.zoom),   
-    path('crear_pdf/',views.exp_pdf_plataf),
+    path('acomodadores/',acomodadores),
+    path('',dashboard),
+    path('dashboard/',dashboard),
+    path('lectores/',lectores),
+    path('microfonos/',microfonos),
+    path('plataforma/',plataforma),  
+    path('presidentes/',presidentes),   
+    path('voluntarios/',voluntarios),
+    path('asignados/',asignados),
+    path('zoom/',zoom),   
+    path('crear_pdf/',exp_pdf_plataf),
 ] + static(settings.STATIC_URL,document_root = settings.STATIC_ROOT)
 
