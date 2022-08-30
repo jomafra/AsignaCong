@@ -73,18 +73,18 @@ def acomodadores (request):
     return render (request,'acomodadores.html',contexto)
 
 def presidentes (request):
-    listasalon = Presidente.objects.all()
+    listapres = Presidente.objects.all()
 
     contexto={
-        'listasalon':listasalon
+        'listapres':listapres
     }
     return render (request,'presidentes.html',contexto)
 
 def lectores (request):
-    listasalon = Lector.objects.all()
+    listalect = Lector.objects.all()
 
     contexto={
-        'listasalon':listasalon
+        'listalect':listalect
     }
     return render (request,'lectores.html',contexto)
 
