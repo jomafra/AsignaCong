@@ -1,6 +1,6 @@
 import os
 from pathlib import Path 
-from . import dj_database_url
+import dj_database_url
 
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
