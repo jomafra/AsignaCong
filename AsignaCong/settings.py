@@ -44,11 +44,11 @@ MIDDLEWARE = [
 ]
 
 ROOT_URLCONF = 'AsignaCong.urls'
-
+#'C:/Users/jose/AmisCosas/ProyectosDjango/AsignaCong/funciones/plantillas
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': ['C:/Users/jose/AmisCosas/ProyectosDjango/AsignaCong/funciones/plantillas'],
+        'DIRS': [os.path.join(BASE_DIR,'funciones/plantillas')],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
