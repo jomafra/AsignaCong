@@ -9,7 +9,7 @@ from funciones.views import voluntarios, plataforma, microfonos, zoom, dashboard
 urlpatterns = [
     path('admin/',admin.site.urls),
     path('acomodadores/',acomodadores),
-    path('/',dashboard),
+    path('',dashboard),
     path('dashboard/',dashboard),
     path('lectores/',lectores),
     path('microfonos/',microfonos),
