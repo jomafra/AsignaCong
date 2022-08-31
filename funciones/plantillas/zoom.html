@@ -22,12 +22,12 @@
         </thead>
         <tbody>
             {% if listazoom %}
-                {% for asignado in listazoom %}
+                {% for z in listazoom %}
             <tr>
-                <td>{{asignado.fecha}}</td>
-                <td>{{asignado.voluntario_Id}}</td>
+                <td>{{z.fecha|date:'d-m-Y'}}</td>
+                <td>{{z.voluntario_Id}}</td>
 
-                <td><a href="/admin/funciones/zoom/{{asignado.Zoom_Id}}/change/">Cambiar</a></td>
+                <td><a href="/admin/funciones/zoom/{{z.Zoom_Id}}/change/">Cambiar</a></td>
                 <td>Otro</td>
             </tr>
                 {%endfor%}

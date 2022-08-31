@@ -24,7 +24,7 @@
             {% if listacomo %}
             {% for a in listacomo %}
             <tr>
-                <td>{{a.fecha}}</td>
+                <td>{{a.fecha|date:'d-m-Y'}}</td>
                 <td>{{a.voluntario_Id}}</td>
 
                 <td>

@@ -22,11 +22,11 @@
         </thead>
         <tbody>
             {% if listamicro %}
-                {% for asignado in listamicro %}
+                {% for m in listamicro %}
             <tr>
-                <td>{{asignado.fecha}}</td>
-                <td>{{asignado.voluntario_Id}}</td>
-                <td><a href="/admin/funciones/microfono/{{asignado.microfono_Id}}/change/">Cambiar</a></td>
+                <td>{{m.fecha|date:'d-m-Y'}}</td>
+                <td>{{m.voluntario_Id}}</td>
+                <td><a href="/admin/funciones/microfono/{{m.microfono_Id}}/change/">Cambiar</a></td>
                 <td>Otro</td>
             </tr>
                 {%endfor%}

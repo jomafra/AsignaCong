@@ -21,7 +21,7 @@
                        
                         <tr>
                             <td>
-                                {{p.fecha}}
+                                {{p.fecha|date:'d-m-Y'}}
                             </td>
                             <td>
                                 {{p.voluntario_Id}}
@@ -45,7 +45,7 @@
                         {% for m in listamicr %}
                         <tr>
                             <td>
-                                {{m.fecha}}
+                                {{m.fecha|date:'d-m-Y'}}
                             </td>
                             <td>
                                 {{m.voluntario_Id}}
@@ -69,7 +69,7 @@
                         {% for z in listazoom %}
                         <tr>
                             <td>
-                                {{z.fecha}}
+                                {{z.fecha|date:'d-m-Y'}}
                             </td>
                             <td>
                                 {{z.voluntario_Id}}
@@ -97,7 +97,7 @@
                         {% for a in listacomo %}
                         <tr>
                             <td>
-                                {{a.fecha}}
+                                {{a.fecha|date:'d-m-Y'}}
                             </td>
                             <td>
                                 {{a.voluntario_Id}}

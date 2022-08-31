@@ -28,7 +28,7 @@
         {% if listapres %}
         {% for p in listapres %}
         <tr>
-            <td>{{p.fecha}}</td>
+            <td>{{p.fecha|date:'d-m-Y'}}</td>
             <td>{{p.voluntario_Id}}</td>
             <td><a class=" nav-link" href="/admin/funciones/presidente/{{p.presid_Id}}/change/">Cambiar</a></td>
             <td><a class=" nav-link" href="/admin/funciones/presidente/add/">Otro</a></td>
