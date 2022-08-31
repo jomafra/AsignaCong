@@ -31,7 +31,7 @@
                 <h5 class="card-title"><a class=" btn btn-light nav-link " href="/microfonos/">Microfonos</a></h5>
                 {% if listamicr %}
                 {% for m in listamicr %}
-                <h6>{{m.fecha|date:'d-m-Y'}} {{m.voluntario_Id}}</h6>
+                <h6>{{m.fecha|date:'d-m-Y'}} {{m.voluntarioUno_Id}} {{m.voluntarioDos_Id}}</h6>
                 {%endfor%}
                 {% endif %}
             </div>

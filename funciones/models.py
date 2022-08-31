@@ -69,16 +69,16 @@ class Microfono (models.Model):
  
     microfono_Id= models.AutoField (primary_key =True)
     fecha = models.DateField( blank= True)
-    voluntarioUno_Id = models.ForeignKey (Voluntario, limit_choices_to= {'habilit_microf':'hab'}, null=False, blank= False ,on_delete = models.CASCADE,)
-    voluntarioDos_Id = models.ForeignKey (Voluntario, limit_choices_to= {'habilit_microf':'hab'}, null=False, blank= False ,on_delete = models.CASCADE,)
+    voluntarioUno = models.ForeignKey (Voluntario, related_name='Microfonos' ,limit_choices_to= {'habilit_microf':'hab'}, null=True, blank= False ,on_delete = models.CASCADE,)
+    voluntarioDos = models.ForeignKey (Voluntario, limit_choices_to= {'habilit_microf':'hab'}, null=False, blank= False ,on_delete = models.CASCADE,)
     
     class Meta:
-        ordering = ['fecha','voluntario_Id']
+        ordering = ['fecha']
 
 
     def __str__(self):
         txt ="{0} {1} {2}"
-        return txt.format(self.fecha, self.voluntarioUno_Id,self.voluntarioDos_Id )  
+        return txt.format(self.fecha, self.voluntarioUno,self.voluntarioDos )  
 
 
 
@@ -106,15 +106,15 @@ class Acomodador (models.Model):
 
     acomodador_Id= models.AutoField (primary_key =True)
     fecha = models.DateField( blank= True)
-    voluntarioUno_Id = models.ForeignKey (Voluntario, limit_choices_to= {'habilit_acomod':'hab'},null=False, blank= False ,on_delete = models.CASCADE,)
-    voluntarioDos_Id = models.ForeignKey (Voluntario, limit_choices_to= {'habilit_acomod':'hab'},null=False, blank= False ,on_delete = models.CASCADE,)
+    voluntarioUno = models.ForeignKey (Voluntario, related_name='acomodadors' ,limit_choices_to= {'habilit_acomod':'hab'},null=True, blank= False ,on_delete = models.CASCADE,)
+    voluntarioDos = models.ForeignKey (Voluntario,limit_choices_to= {'habilit_acomod':'hab'},null=False, blank= False ,on_delete = models.CASCADE,)
     
     class Meta:
-        ordering = ['fecha','voluntario_Id']
+        ordering = ['fecha']
 
     def __str__(self):
-        txt ="{0} {1}"
-        return txt.format(self.fecha, self.voluntarioUno_Id,self.voluntarioDos)
+        txt ="{0} {1} {2}"
+        return txt.format(self.fecha, self.voluntarioUno,self.voluntarioDos)
 
 class Presidente (models.Model):
     
