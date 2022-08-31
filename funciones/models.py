@@ -73,7 +73,7 @@ class Microfono (models.Model):
     voluntarioDos = models.ForeignKey (Voluntario, limit_choices_to= {'habilit_microf':'hab'}, null=False, blank= False ,on_delete = models.CASCADE,)
     
     class Meta:
-        ordering = ['fecha']
+        ordering = ['fecha',]
 
 
     def __str__(self):
