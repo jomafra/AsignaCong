@@ -69,15 +69,16 @@ class Microfono (models.Model):
  
     microfono_Id= models.AutoField (primary_key =True)
     fecha = models.DateField( blank= True)
-    voluntario_Id = models.ForeignKey (Voluntario, limit_choices_to= {'habilit_microf':'hab'}, null=False, blank= False ,on_delete = models.CASCADE,)
+    voluntarioUno_Id = models.ForeignKey (Voluntario, limit_choices_to= {'habilit_microf':'hab'}, null=False, blank= False ,on_delete = models.CASCADE,)
+    voluntarioDos_Id = models.ForeignKey (Voluntario, limit_choices_to= {'habilit_microf':'hab'}, null=False, blank= False ,on_delete = models.CASCADE,)
     
     class Meta:
         ordering = ['fecha','voluntario_Id']
 
 
     def __str__(self):
-        txt ="{0} {1}"
-        return txt.format(self.fecha, self.voluntario_Id)  
+        txt ="{0} {1} {2}"
+        return txt.format(self.fecha, self.voluntarioUno_Id,self.voluntarioDos_Id )  
 
 
 
@@ -105,14 +106,15 @@ class Acomodador (models.Model):
 
     acomodador_Id= models.AutoField (primary_key =True)
     fecha = models.DateField( blank= True)
-    voluntario_Id = models.ForeignKey (Voluntario, limit_choices_to= {'habilit_acomod':'hab'},null=False, blank= False ,on_delete = models.CASCADE,)
+    voluntarioUno_Id = models.ForeignKey (Voluntario, limit_choices_to= {'habilit_acomod':'hab'},null=False, blank= False ,on_delete = models.CASCADE,)
+    voluntarioDos_Id = models.ForeignKey (Voluntario, limit_choices_to= {'habilit_acomod':'hab'},null=False, blank= False ,on_delete = models.CASCADE,)
     
     class Meta:
         ordering = ['fecha','voluntario_Id']
 
     def __str__(self):
         txt ="{0} {1}"
-        return txt.format(self.fecha, self.voluntario_Id)
+        return txt.format(self.fecha, self.voluntarioUno_Id,self.voluntarioDos)
 
 class Presidente (models.Model):
     
