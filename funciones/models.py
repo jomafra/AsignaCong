@@ -56,10 +56,11 @@ class Plataforma (models.Model):
     
     class Meta:
         ordering = ['fecha','voluntario_Id']
+    #formatedfecha =self.fecha.strftime('%d-%m-%Y')
 
     def __str__(self):
         txt ="{0} {1}"
-        return txt.format(self.fecha, self.voluntario_Id)
+        return txt.format(self.fecha.strftime('%d-%m-%Y'), self.voluntario_Id)
 
 
 
