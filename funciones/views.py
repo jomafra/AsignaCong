@@ -141,7 +141,8 @@ def exp_pdf_plataf(request):
     if listamicr:      
         for m in listamicr:
             p.drawString(280,h-inc, str(m.voluntario_Id))
-            inc =inc + 20 
+            inc = inc + 20 
+            incam = inc
 
     listazoom = Zoom.objects.all()
     inc = inca
@@ -150,6 +151,7 @@ def exp_pdf_plataf(request):
             p.drawString(430,h-inc, str(z.voluntario_Id))
             inc =inc + 20 
 
+    inc = incam
     inc = inc +20
     p.line(60,h-inc,530,h-inc)
     inc =inc + 40
