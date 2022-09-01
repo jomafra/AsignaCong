@@ -15,9 +15,10 @@
         <thead>
             <tr>
                 <th scope="col">Fecha</th>
-                <th scope="col">Nombres</th>
+                <th scope="col">Nombre</th>
+                <th scope="col">Nombre</th>
                 <th scope="col">Opciones</th>
-                <th scope="col">Agregar</th>
+
             </tr>
         </thead>
         <tbody>
@@ -28,7 +29,7 @@
                 <td>{{m.voluntarioUno}}</td>
                 <td>{{m.voluntarioDos}}</td>
                 <td><a href="/admin/funciones/microfono/{{m.microfono_Id}}/change/">Cambiar</a></td>
-                <td>Otro</td>
+                
             </tr>
                 {%endfor%}
             {% endif %}

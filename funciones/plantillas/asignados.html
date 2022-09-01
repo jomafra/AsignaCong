@@ -1,14 +1,14 @@
 {% extends "base_pdf.html" %}
 
 {% block title %}
-    Asignados_pdf
+    Asignados
 {% endblock %}
 {% block content %}
 <div class="container">
     <div class="row ">
         <div class="col text-center mb-3">
             <h3>Asignados a Funciones de Congregacion</h3>
-        </div> 
+        </div>
     </div>
     <div class="row ">
         <div class="col-lg-4">
@@ -18,7 +18,7 @@
                     {% if listaplat %}
                     <table class="table">
                         {% for p in listaplat %}
-                       
+
                         <tr>
                             <td>
                                 {{p.fecha|date:'d-m-Y'}}
@@ -36,33 +36,7 @@
                 </div>
             </div>
         </div>
-        <div class="col-lg-4">
-            <div class="card">
-                <div class="card-body">
-                    <h4 class="card-title text-center">Microfonos</h4>
-                    {% if listamicr %}
-                    <table class="table">
-                        {% for m in listamicr %}
-                        <tr>
-                            <td>
-                                {{m.fecha|date:'d-m-Y'}}
-                            </td>
-                            <td>
-                                {{m.voluntarioUno}}
-                            </td>
-                            <td>
-                                {{m.voluntarioDos}}
-                            </td>
-                        </tr>
-                        {%endfor%}
-                    </table>
-                    {% endif %}
-                </div>
-                <div class="card-footer">
-                    <small class="text-muted">Lista de hermanos encargados de pasar el microfono durante los comentarios en las reuniones.</small>
-                </div>
-            </div>
-        </div>
+
         <div class="col-lg-4">
             <div class="card">
                 <div class="card-body">
@@ -89,6 +63,7 @@
         </div>
     </div>
     <br />
+
     <div class="row ">
         <div class="col-lg-6">
             <div class="card">
@@ -119,15 +94,99 @@
                 </div>
             </div>
         </div>
-        
+        <div class="col-lg-6">
+            <div class="card">
+                <div class="card-body">
+                    <h4 class="card-title text-center">Microfonos</h4>
+                    {% if listamicr %}
+                    <table class="table">
+                        {% for m in listamicr %}
+                        <tr>
+                            <td>
+                                {{m.fecha|date:'d-m-Y'}}
+                            </td>
+                            <td>
+                                {{m.voluntarioUno}}
+                            </td>
+                            <td>
+                                {{m.voluntarioDos}}
+                            </td>
+                        </tr>
+                        {%endfor%}
+                    </table>
+                    {% endif %}
+                </div>
+                <div class="card-footer">
+                    <small class="text-muted">Lista de hermanos encargados de pasar el microfono durante los comentarios en las reuniones.</small>
+                </div>
+            </div>
+        </div>
+
+
+
+    </div>
+    <br />
+    <div class="row ">
+        <div class="col-lg-6">
+            <div class="card">
+                <div class="card-body">
+                    <h4 class="card-title text-center">Presidentes</h4>
+                    {% if listapres %}
+
+                    <table class="table">
+                        {% for p in listapres %}
+                        <tr>
+                            <td>
+                                {{p.fecha|date:'d-m-Y'}}
+                            </td>
+                            <td>
+                                {{p.voluntario_Id}}
+                            </td>
+                            
+                        </tr>
+                        {%endfor%}
+                    </table>
+
+                    {% endif %}
+                </div>
+                <div class="card-footer">
+                    <small class="text-muted">Lista de hermanos asignados a presidir la reunion publica.</small>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-6">
+            <div class="card">
+                <div class="card-body">
+                    <h4 class="card-title text-center">Lectores</h4>
+                    {% if listalect %}
+                    <table class="table">
+                        {% for l in listalect %}
+                        <tr>
+                            <td>
+                                {{l.fecha|date:'d-m-Y'}}
+                            </td>
+                            <td>
+                                {{l.voluntario_Id}}
+                            </td>
+                      
+                        </tr>
+                        {%endfor%}
+                    </table>
+                    {% endif %}
+                </div>
+                <div class="card-footer">
+                    <small class="text-muted">Lista de hermanos encargados de leer la atalaya.</small>
+                </div>
+            </div>
+        </div>
 
 
 
     </div>
 
 
-    
-            
-        
+
+
+
 </div>
 {% endblock %}

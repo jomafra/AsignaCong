@@ -108,93 +108,101 @@ def asignados (request):
     }
     return render (request,'asignados.html',contexto)
 
+#-----------------------------------------------------------------------------------------
 
 def exp_pdf_plataf(request):       
     w,h = A4
     buffer = io.BytesIO()
     p = canvas.Canvas(buffer)
+    p.setAuthor('Congregacion el Pueblo')
+    p.setTitle('Asignados a Funciones en Congregacion')
+  
     inc =60
     p.setFontSize(20)
-    p.drawString(80,h-inc,"Asignacion de Funciones en la  Cong  el Pueblo ")
+    p.drawString(80,h-inc,"Asignados a Funciones   Cong  el Pueblo")
+    
     inc = inc + 20
     p.line(60,h-inc,530,h-inc)
-    p.setFontSize(14)
     inc = inc + 40
-    
-    p.drawString(40,h-inc,"Fechas")
-    p.drawString(140,h-inc,"PLATAFORMA")
-    p.drawString(290,h-inc,"MICROFONO")
-    p.drawString(450,h-inc,"ZOOM")
 
+    p.setFontSize(14)
+    
+    
+    p.drawString(220,h-inc,"PLATAFORMA")
+    p.drawString(400,h-inc,"ZOOM")
     inc = inc + 40
     inca = inc
+
     listaplat = Plataforma.objects.all()
- 
     if listaplat:      
         for a in listaplat:
-            p.drawString(40,h-inc, str(a.fecha))
-            p.drawString(140,h-inc, str(a.voluntario_Id))
+            p.drawString(60,h-inc, str(a.fecha))
+            p.drawString(220,h-inc, str(a.voluntario_Id))
             inc =inc + 20
-
-    listamicr = Microfono.objects.all()
-    inc = inca
-    if listamicr:      
-        for m in listamicr:
-            p.drawString(280,h-inc, str(m.voluntario_Id))
-            inc = inc + 20 
-            incam = inc
 
     listazoom = Zoom.objects.all()
     inc = inca
     if listazoom:      
         for z in listazoom:
-            p.drawString(430,h-inc, str(z.voluntario_Id))
+            p.drawString(400,h-inc, str(z.voluntario_Id))
             inc =inc + 20 
 
-    inc = incam
-    inc = inc +20
+    # -------------------------------------------------
+    inc =inc + 20
     p.line(60,h-inc,530,h-inc)
     inc =inc + 40
+    # -------------------------------------------------
+    
+    
+    p.drawString(220,h-inc,"MICROFONOS")
+    inc = inc +40
 
-    p.drawString(200,h-inc,"ACOMODADOR 1")
-    p.drawString(380,h-inc,"ACOMODADOR 2")
+    listamicr = Microfono.objects.all()
+    if listamicr:      
+        for m in listamicr:
+            p.drawString(60,h-inc, str(a.fecha))
+            p.drawString(220,h-inc, str(m.voluntarioUno))
+            p.drawString(400,h-inc, str(m.voluntarioDos))
+            inc = inc + 20
+    #----------------------------------------------------
+    inc =inc + 20
+    p.line(60,h-inc,530,h-inc)
+    inc =inc + 40
+    # ---------------------------------------------------
+    p.drawString(220,h-inc,"ACOMODADORES")
     inc = inc +40
 
     listacomo = Acomodador.objects.all()  
     if listacomo:      
         for a in listacomo:
-            p.drawString(50,h-inc, str(a.fecha))
-            p.drawString(200,h-inc, str(a.voluntario_Id))
-            # acomodador: 2
-            p.drawString(380,h-inc, str(a.voluntario_Id))
+            p.drawString(60,h-inc, str(a.fecha))
+            p.drawString(220,h-inc, str(a.voluntarioUno))
+            p.drawString(400,h-inc, str(a.voluntarioDos))
             inc =inc + 20 
-
-    inc = inc +20
+    # ------------------------------------------------------
+    inc =inc + 20
     p.line(60,h-inc,530,h-inc)
+    # ------------------------------------------------------
     inc =inc + 40
-    p.drawString(200,h-inc,"PRESIDENTES")
-    p.drawString(380,h-inc,"LECTORES")
+    p.drawString(220,h-inc,"PRESIDENTES")
+    p.drawString(400,h-inc,"LECTORES")
     inc = inc +40
 
     inpr = inc
     listapres = Presidente.objects.all()
     if listapres:      
         for pr in listapres:
-            p.drawString(50,h-inc, str(pr.fecha))
-            p.drawString(200,h-inc, str(pr.voluntario_Id))
+            p.drawString(60,h-inc, str(pr.fecha))
+            p.drawString(220,h-inc, str(pr.voluntario_Id))
             inc =inc + 20 
 
     inc = inpr
     listalect = Lector.objects.all()
     if listalect:      
         for l in listalect:
-            p.drawString(380,h-inc, str(l.voluntario_Id))
+            p.drawString(400,h-inc, str(l.voluntario_Id))
             inc =inc + 20 
-    """
-    inc = inc +20
-    p.line(60,h-inc,530,h-inc)
-    inc =inc + 40
-    """
+    
 
     p.showPage()
     p.save()
