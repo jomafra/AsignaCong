@@ -90,6 +90,7 @@ def asignados (request):
     return render (request,'asignados.html',contexto)
 
 #-----------------------------------------------------------------------------------------
+#---------------------------Vista de creacion de pdf--------------------------------------
 
 def exp_pdf_plataf(request):       
     w,h = A4
@@ -100,8 +101,7 @@ def exp_pdf_plataf(request):
   
     inc =60
     p.setFontSize(20)
-    p.drawString(80,h-inc,"Asignados a Funciones   Cong  el Pueblo")
-    
+    p.drawString(80,h-inc,"Asignados a Funciones   Cong  el Pueblo") 
     inc = inc + 20
     p.line(60,h-inc,530,h-inc)
     inc = inc + 40
@@ -128,11 +128,11 @@ def exp_pdf_plataf(request):
             p.drawString(400,h-inc, str(z.voluntario_Id))
             inc =inc + 20 
 
-    # -------------------------------------------------
+    # --------------------Espacio antes de linea-----------------------------
     inc =inc + 20
     p.line(60,h-inc,530,h-inc)
     inc =inc + 40
-    # -------------------------------------------------
+    # --------------------Espacio despues de linea-----------------------------
     
     
     p.drawString(220,h-inc,"MICROFONOS")
@@ -145,11 +145,11 @@ def exp_pdf_plataf(request):
             p.drawString(220,h-inc, str(m.voluntarioUno))
             p.drawString(400,h-inc, str(m.voluntarioDos))
             inc = inc + 20
-    #----------------------------------------------------
+    #----------------------Espacio antes de linea------------------
     inc =inc + 20
     p.line(60,h-inc,530,h-inc)
     inc =inc + 40
-    # ---------------------------------------------------
+    # ---------------------Espacio despues de linea----------------
     p.drawString(220,h-inc,"ACOMODADORES")
     inc = inc +40
 
@@ -160,16 +160,27 @@ def exp_pdf_plataf(request):
             p.drawString(220,h-inc, str(a.voluntarioUno))
             p.drawString(400,h-inc, str(a.voluntarioDos))
             inc =inc + 20 
-    # ------------------------------------------------------
+    # -----------------Espacio antes de linea ----------------------
     inc =inc + 20
     p.line(60,h-inc,530,h-inc)
-    # ------------------------------------------------------
-    inc =inc + 40
+    # -----------------ESpacio despues de linea---------------------
+    p.showPage()
+    # ----------------Comienzo de nueva pagina ---------------------
+    p.setFontSize(20)
+    inc =60
+    p.drawString(80,h-inc,"Asignados a Funciones   Cong  el Pueblo")  
+    inc = inc + 20
+    p.line(60,h-inc,530,h-inc)
+    p.setFontSize(14)
+    inc = inc + 40
+    #------------------------------------------------------
     p.drawString(220,h-inc,"PRESIDENTES")
     p.drawString(400,h-inc,"LECTORES")
     inc = inc +40
 
     inpr = inc
+
+    
     listapres = Presidente.objects.all()
     if listapres:      
         for pr in listapres:
@@ -183,7 +194,10 @@ def exp_pdf_plataf(request):
         for l in listalect:
             p.drawString(400,h-inc, str(l.voluntario_Id))
             inc =inc + 20 
-    
+    # ---------------Espacio antes de linea---------------
+    inc =inc + 20
+    p.line(60,h-inc,530,h-inc)
+    # ---------------Espacio final------------------------
 
     p.showPage()
     p.save()
