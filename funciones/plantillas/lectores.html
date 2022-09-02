@@ -28,7 +28,7 @@
         {% if listalect %}
         {% for l in listalect %}
         <tr>
-            <td>{{l.fecha}}</td>
+            <td>{{l.fecha|date:'d-m-Y'}}</td>
             <td>{{l.voluntario_Id}}</td>
             <td><a class=" nav-link" href="/admin/funciones/presidente/{{l.lector_Id}}/change/">Cambiar</a></td>
             <td><a class=" nav-link" href="/admin/funciones/presidente/add/">Otro</a></td>

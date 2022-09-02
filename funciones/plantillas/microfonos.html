@@ -18,7 +18,7 @@
                 <th scope="col">Nombre</th>
                 <th scope="col">Nombre</th>
                 <th scope="col">Opciones</th>
-
+                <th scope="col">Agregar</th>
             </tr>
         </thead>
         <tbody>
@@ -28,8 +28,8 @@
                 <td>{{m.fecha|date:'d-m-Y'}}</td>
                 <td>{{m.voluntarioUno}}</td>
                 <td>{{m.voluntarioDos}}</td>
-                <td><a href="/admin/funciones/microfono/{{m.microfono_Id}}/change/">Cambiar</a></td>
-                
+                <td><a class="nav-link" href="/admin/funciones/microfono/{{m.microfono_Id}}/change/">Cambiar</a></td>
+                <td><a class="nav-link" href="/admin/funciones/microfono/add/">Otro</a></td>
             </tr>
                 {%endfor%}
             {% endif %}

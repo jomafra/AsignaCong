@@ -10,11 +10,7 @@
 
     {% block contenido %}
 <div class" row mt-2 mb-2">
-    <div class="">
-        <h3>Voluntarios</h3>
-    </div>
-    
-
+        <h3 class="">Voluntarios</h3>            
 </div>
         
         <table class="table table-hover">
@@ -44,11 +40,16 @@
                     <td>{{h.habilit_presid}}</td>
                     <td>{{h.habilit_lector}}</td>
                     <td>{{h.privilegio}}</td>
-                    <td><a href="/admin/funciones/voluntario/{{h.voluntario_Id}}/change/">Editar </a> <a href="/admin/funciones/voluntario/add/"> Otro +</a></td>
+                    <td><a href="/admin/funciones/voluntario/{{h.voluntario_Id}}/change/">Editar </a></td>
 
                 </tr>
                     {%endfor%}
                 {% endif %}
             </tbody>
         </table>
+<div class" row mt-2 mb-2">
+    <h5>
+       <a class=" float-end nav-link" href="/admin/funciones/voluntario/add/">Agregar</a>
+    </h5>
+</div>
     {% endblock %}

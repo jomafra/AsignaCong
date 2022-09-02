@@ -18,7 +18,7 @@
                 <th scope="col">Acomodador uno</th>
                 <th scope="col">Acomodador dos</th>
                 <th scope="col">Opciones</th>
-
+                <th scope="col">Agregar</th>
             </tr>
         </thead>
         <tbody>
@@ -29,9 +29,10 @@
                 <td>{{a.voluntarioUno}}</td>
                 <td>{{a.voluntarioDos}}</td>
                 <td>
-                    <a class=" " href="/admin/funciones/acomodador/{{a.acomodador_Id}}/change/">Cambiar</a>
-                    <a class="" href="/admin/funciones/acomodador/{{a.acomodador_Id}}/delete/">Borrar</a>
-                    <a class="" href="/admin/funciones/acomodador/add/">+</a>
+                    <a class="nav-link" href="/admin/funciones/acomodador/{{a.acomodador_Id}}/change/">Cambiar</a>               
+                </td>
+                <td>
+                    <a class="nav-link" href="/admin/funciones/acomodador/add/">Otro</a>
                 </td>
 
             </tr>

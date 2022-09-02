@@ -44,25 +44,6 @@ def zoom (request):
     }
     return render (request,'zoom.html',contexto)
 
-def dashboard (request):
-    listaplat = Plataforma.objects.all()
-    listamicr = Microfono.objects.all()
-    listacomo = Acomodador.objects.all()
-    listazoom = Zoom.objects.all()
-    listapres = Presidente.objects.all()
-    listalect = Lector.objects.all()
-
-
-    contexto={
-        'listaplat':listaplat,
-        'listamicr':listamicr,
-        'listacomo':listacomo,
-        'listazoom':listazoom,
-        'listapres':listapres,
-        'listalect':listalect,
-    }
-    return render (request,'dashboard.html',contexto)
-
 
 def acomodadores (request):
     listacomo = Acomodador.objects.all()
