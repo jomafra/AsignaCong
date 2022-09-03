@@ -102,12 +102,11 @@ def exp_pdf_plataf(request):
     inc =60
     p.setFontSize(20)
     p.drawString(80,h-inc,"Asignados a Funciones   Cong  el Pueblo") 
+    p.setFontSize(14)
+
     inc = inc + 20
     p.line(60,h-inc,530,h-inc)
-    inc = inc + 40
-
-    p.setFontSize(14)
-    
+    inc = inc + 30
     
     p.drawString(220,h-inc,"PLATAFORMA")
     p.drawString(400,h-inc,"ZOOM")
@@ -120,18 +119,23 @@ def exp_pdf_plataf(request):
             p.drawString(60,h-inc, a.fecha.strftime('%d-%m-%Y'))
             p.drawString(220,h-inc, str(a.voluntario_Id))
             inc =inc + 20
-
+    incp = inc
     listazoom = Zoom.objects.all()
     inc = inca
     if listazoom:      
         for z in listazoom:
             p.drawString(400,h-inc, str(z.voluntario_Id))
             inc =inc + 20 
+    incz = inc
 
+    if incp > incz:
+        inc = incp
+    else:
+        inc = incz
     # --------------------Espacio antes de linea-----------------------------
     inc =inc + 20
     p.line(60,h-inc,530,h-inc)
-    inc =inc + 40
+    inc =inc + 30
     # --------------------Espacio despues de linea-----------------------------
     
     
@@ -148,7 +152,7 @@ def exp_pdf_plataf(request):
     #----------------------Espacio antes de linea------------------
     inc =inc + 20
     p.line(60,h-inc,530,h-inc)
-    inc =inc + 40
+    inc =inc + 30
     # ---------------------Espacio despues de linea----------------
     p.drawString(220,h-inc,"ACOMODADORES")
     inc = inc +40
@@ -161,8 +165,8 @@ def exp_pdf_plataf(request):
             p.drawString(400,h-inc, str(a.voluntarioDos))
             inc =inc + 20 
     # -----------------Espacio antes de linea ----------------------
-    inc =inc + 20
-    p.line(60,h-inc,530,h-inc)
+    #inc =inc + 20
+    #p.line(60,h-inc,530,h-inc)
     # -----------------ESpacio despues de linea---------------------
     p.showPage()
     # ----------------Comienzo de nueva pagina ---------------------
@@ -176,7 +180,7 @@ def exp_pdf_plataf(request):
     #------------------------------------------------------
     p.drawString(220,h-inc,"PRESIDENTES")
     p.drawString(400,h-inc,"LECTORES")
-    inc = inc +40
+    inc = inc +30
 
     inpr = inc
 
@@ -195,8 +199,8 @@ def exp_pdf_plataf(request):
             p.drawString(400,h-inc, str(l.voluntario_Id))
             inc =inc + 20 
     # ---------------Espacio antes de linea---------------
-    inc =inc + 20
-    p.line(60,h-inc,530,h-inc)
+    #inc =inc + 20
+    #p.line(60,h-inc,530,h-inc)
     # ---------------Espacio final------------------------
 
     p.showPage()
