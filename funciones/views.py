@@ -117,7 +117,7 @@ def exp_pdf_plataf(request):
     listaplat = Plataforma.objects.all()
     if listaplat:      
         for a in listaplat:
-            p.drawString(60,h-inc, str(a.fecha))
+            p.drawString(60,h-inc, a.fecha.strftime('%d-%m-%Y'))
             p.drawString(220,h-inc, str(a.voluntario_Id))
             inc =inc + 20
 
@@ -141,7 +141,7 @@ def exp_pdf_plataf(request):
     listamicr = Microfono.objects.all()
     if listamicr:      
         for m in listamicr:
-            p.drawString(60,h-inc, str(a.fecha))
+            p.drawString(60,h-inc, m.fecha.strftime('%d-%m-%Y'))
             p.drawString(220,h-inc, str(m.voluntarioUno))
             p.drawString(400,h-inc, str(m.voluntarioDos))
             inc = inc + 20
@@ -156,7 +156,7 @@ def exp_pdf_plataf(request):
     listacomo = Acomodador.objects.all()  
     if listacomo:      
         for a in listacomo:
-            p.drawString(60,h-inc, str(a.fecha))
+            p.drawString(60,h-inc, a.fecha.strftime('%d-%m-%Y'))
             p.drawString(220,h-inc, str(a.voluntarioUno))
             p.drawString(400,h-inc, str(a.voluntarioDos))
             inc =inc + 20 
@@ -184,7 +184,7 @@ def exp_pdf_plataf(request):
     listapres = Presidente.objects.all()
     if listapres:      
         for pr in listapres:
-            p.drawString(60,h-inc, str(pr.fecha))
+            p.drawString(60,h-inc, pr.fecha.strftime('%d-%m-%Y'))
             p.drawString(220,h-inc, str(pr.voluntario_Id))
             inc =inc + 20 
 

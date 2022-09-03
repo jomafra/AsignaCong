@@ -1,16 +1,14 @@
 {% extends 'base.html' %}
-
-
-
-
     {% block title %}
         voluntarios
     {% endblock %}
 
 
     {% block contenido %}
-<div class" row mt-2 mb-2">
-        <h3 class="">Voluntarios</h3>            
+<div class=" mt-2 mb-2 ">
+    <h3 >
+        <a class="nav-link" href="/admin/funciones/voluntario/add/">Voluntarios</a>
+    </h3>         
 </div>
         
         <table class="table table-hover">
@@ -40,16 +38,16 @@
                     <td>{{h.habilit_presid}}</td>
                     <td>{{h.habilit_lector}}</td>
                     <td>{{h.privilegio}}</td>
-                    <td><a href="/admin/funciones/voluntario/{{h.voluntario_Id}}/change/">Editar </a></td>
+                    <td>
+                        <a href="/admin/funciones/voluntario/{{h.voluntario_Id}}/change/">Editar </a>
+                        &emsp;
+                        <a href="/admin/funciones/voluntario/add/">Agregar</a>
+                    </td>
 
                 </tr>
                     {%endfor%}
                 {% endif %}
             </tbody>
         </table>
-<div class" row mt-2 mb-2">
-    <h5>
-       <a class=" float-end nav-link" href="/admin/funciones/voluntario/add/">Agregar</a>
-    </h5>
-</div>
+
     {% endblock %}
