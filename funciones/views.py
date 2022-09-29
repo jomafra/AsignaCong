@@ -102,11 +102,11 @@ def exp_pdf_plataf(request):
     inc =60
     p.setFontSize(18)
     p.drawString(80,h-inc,"Asignados a Funciones   Cong  el Pueblo") 
-    p.setFontSize(12)
+    p.setFontSize(14)
 
     inc = inc + 15
     p.line(60,h-inc,530,h-inc)
-    inc = inc + 25
+    inc = inc + 30
     
     p.drawString(220,h-inc,"PLATAFORMA")
     p.drawString(400,h-inc,"ZOOM")
@@ -135,7 +135,7 @@ def exp_pdf_plataf(request):
     # --------------------Espacio antes de linea-----------------------------
     inc =inc + 15
     p.line(60,h-inc,530,h-inc)
-    inc =inc + 20
+    inc =inc + 30
     # --------------------Espacio despues de linea-----------------------------
     
     
@@ -152,7 +152,7 @@ def exp_pdf_plataf(request):
     #----------------------Espacio antes de linea------------------
     inc =inc + 15
     p.line(60,h-inc,530,h-inc)
-    inc =inc + 20
+    inc =inc + 30
     # ---------------------Espacio despues de linea----------------
     p.drawString(220,h-inc,"ACOMODADORES")
     inc = inc +30
