@@ -118,14 +118,14 @@ def exp_pdf_plataf(request):
         for a in listaplat:
             p.drawString(60,h-inc, a.fecha.strftime('%d-%m-%Y'))
             p.drawString(220,h-inc, str(a.voluntario_Id))
-            inc =inc + 15
+            inc =inc + 18
     incp = inc
     listazoom = Zoom.objects.all()
     inc = inca
     if listazoom:      
         for z in listazoom:
             p.drawString(400,h-inc, str(z.voluntario_Id))
-            inc =inc + 15 
+            inc =inc + 18
     incz = inc
 
     if incp > incz:
@@ -148,7 +148,7 @@ def exp_pdf_plataf(request):
             p.drawString(60,h-inc, m.fecha.strftime('%d-%m-%Y'))
             p.drawString(220,h-inc, str(m.voluntarioUno))
             p.drawString(400,h-inc, str(m.voluntarioDos))
-            inc = inc + 15
+            inc = inc + 18
     #----------------------Espacio antes de linea------------------
     inc =inc + 15
     p.line(60,h-inc,530,h-inc)
@@ -163,7 +163,7 @@ def exp_pdf_plataf(request):
             p.drawString(60,h-inc, a.fecha.strftime('%d-%m-%Y'))
             p.drawString(220,h-inc, str(a.voluntarioUno))
             p.drawString(400,h-inc, str(a.voluntarioDos))
-            inc =inc + 15 
+            inc =inc + 18 
     # -----------------Espacio antes de linea ----------------------
     #inc =inc + 20
     #p.line(60,h-inc,530,h-inc)
