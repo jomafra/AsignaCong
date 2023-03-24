@@ -1,5 +1,5 @@
-AsignaCong es:
-Una aplicación web para asignación de funciones de voluntarios por fechas.
+# AsignaCong 
+Es una aplicación web para asignación de funciones de voluntarios por fechas.
 
 Esta hecha en lenguaje de programacion Python, usando el framework Django.
 
